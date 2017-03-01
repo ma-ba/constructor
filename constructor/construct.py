@@ -131,6 +131,16 @@ The color of the default images (when not providing explicit image files)
 used on Windows.  Possible values are `red`, `green`, `blue`, `yellow`.
 The default is `blue`.
 '''),
+
+    ('welcome_image_text',     False, str, '''
+If `welcome_image` is not provided, use this text when generating the image
+(Windows only). Defaults to `name`.
+'''),
+
+    ('header_image_text',      False, str, '''
+If `header_image` is not provided, use this text when generating the image
+(Windows only). Defaults to `name`.
+'''),
 ]
 
 

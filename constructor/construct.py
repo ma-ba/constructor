@@ -90,6 +90,11 @@ The filename of the installer being created.  A reasonable default filename
 will determined by the `name`, `version`, platform and installer type.
 '''),
 
+    ('readme_file',           False, str, '''
+Path to the readme file being displayed by the installer during the install
+process.
+    '''),
+
     ('license_file',           False, str, '''
 Path to the license file being displayed by the installer during the install
 process.

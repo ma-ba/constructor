@@ -150,3 +150,16 @@ If `welcome_image` is not provided, use this text when generating the image
 If `header_image` is not provided, use this text when generating the image
 (Windows only). Defaults to `name`.
 
+
+`add_to_path_default`:
+----------------
+Default choice for whether to add the installation to the PATH environment
+variable. The user is still able to change this during interactive
+installation.
+
+
+`register_python_default`:
+----------------
+Default choice for whether to register the installed Python instance as the
+system's default Python. The user is still able to change this during
+interactive installation. (Windows only)

@@ -1,7 +1,7 @@
 import shutil
 import tempfile
 
-from constructor.imaging import write_images
+from constructor_mb.imaging import write_images
 
 
 def test_write_images():

@@ -1,3 +1,37 @@
+constructor-mb
+==============
+
+This is a fork of [constructor] with some features added which currently
+aren't included in `constructor` itself.
+This fork is mainly meant for my own personal use, thus I strongly suggest to
+use the original package.
+All (or at least most) changes will be issued as pull request to `constructor`.
+If you feel the need to use any of those, leave a comment on the corresponding
+PR at the [constructor pull requests site].
+
+[constructor]: https://github.com/conda/constructor
+[constructor pull requests site]: https://github.com/conda/constructor/pulls
+
+
+Changes in constructor-mb:
+--------------------------
+
+  * Add optional readme.txt support [constructor/#66]
+  * Add customization for welcome and header image texts [constructor/#67]
+  * Add ability to provide defaults for custom options [constructor/#68]
+  * Add basic jinja2 support [constructor/#74]
+  * Remove menus of all conda envs during uninstall [constructor/#75]
+  * Use setuptools package\_data/entry\_points, enable egg/wheel builds
+    [constructor/#76]
+
+[constructor/#66]: https://github.com/conda/constructor/pull/66
+[constructor/#67]: https://github.com/conda/constructor/pull/67
+[constructor/#68]: https://github.com/conda/constructor/pull/68
+[constructor/#74]: https://github.com/conda/constructor/pull/74
+[constructor/#75]: https://github.com/conda/constructor/pull/75
+[constructor/#76]: https://github.com/conda/constructor/pull/76
+
+
 (conda) constructor
 ===================
 

@@ -1,6 +1,6 @@
 
 doc:
-	python constructor/generate_doc.py
+	python constructor_mb/generate_doc.py
 
 test:
-	constructor --test
+	constructor-mb --test

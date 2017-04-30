@@ -1,7 +1,8 @@
+# (c) 2017 Marcel Bargull
 # (c) 2016 Continuum Analytics, Inc. / http://continuum.io
 # All Rights Reserved
 #
-# constructor is distributed under the terms of the BSD 3-clause license.
+# constructor-mb is distributed under the terms of the BSD 3-clause license.
 # Consult LICENSE.txt or http://opensource.org/licenses/BSD-3-Clause.
 
 from __future__ import print_function, division, absolute_import
@@ -151,7 +152,7 @@ def main():
 
     if opts.version:
         from . import __version__
-        print('constructor version:', __version__)
+        print('constructor-mb version:', __version__)
         return
 
     if opts.clean:

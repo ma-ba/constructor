@@ -1,4 +1,4 @@
-from constructor.winexe import make_nsi
+from constructor_mb.winexe import make_nsi
 
 
 if __name__ == '__main__':

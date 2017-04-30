@@ -1,7 +1,8 @@
+# (c) 2017 Marcel Bargull
 # (c) 2016-2017 Continuum Analytics, Inc. / http://continuum.io
 # All Rights Reserved
 #
-# constructor is distributed under the terms of the BSD 3-clause license.
+# constructor-mb is distributed under the terms of the BSD 3-clause license.
 # Consult LICENSE.txt or http://opensource.org/licenses/BSD-3-Clause.
 
 import re
@@ -17,6 +18,8 @@ except ImportError:
     bdist_wheel = None
 
 
+NAME = "constructor-mb"
+PACKAGE_NAME = "constructor_mb"
 SETUP_PY_DIR = dirname(abspath(__file__))
 
 
@@ -30,7 +33,7 @@ def get_package_data(platform):
     else:
         platform = platform if platform in platform_package_data else "unix"
         package_data = platform_package_data[platform]
-    return {"constructor": package_data}
+    return {PACKAGE_NAME: package_data}
 
 
 class PlatformSpecificDistribution(Distribution):
@@ -77,22 +80,27 @@ if bdist_wheel:
     cmdclass["bdist_wheel"] = BDistWheel
 
 
-# read version from constructor/__init__.py
-data = open(join(SETUP_PY_DIR, "constructor", "__init__.py")).read()
+# read version from PACKAGE_NAME/__init__.py
+data = open(join(SETUP_PY_DIR, PACKAGE_NAME, "__init__.py")).read()
 version = re.search(r"^__version__\s*=\s*(['\"])(\S*)\1", data, re.M).group(2)
 
 setup(
-    name="constructor",
+    name=NAME,
+    # name="constructor",
     version=version,
-    author="Ilan Schnell",
-    author_email="ilan@continuum.io",
-    url="https://github.com/conda/constructor",
+    author="Marcel Bargull",
+    author_email="marcel.bargull@udo.edu",
+    url="https://github.com/ma-ba/constructor",
+    # author="Ilan Schnell",
+    # author_email="ilan@continuum.io",
+    # url="https://github.com/conda/constructor",
     license="BSD",
-    description="create installer from conda packages",
+    description="create installer from conda packages (fork of constructor)",
+    # description="create installer from conda packages",
     long_description=open(join(SETUP_PY_DIR, "README.md")).read(),
-    packages=["constructor", "constructor.tests"],
+    packages=[PACKAGE_NAME, "%s.tests" % PACKAGE_NAME],
     entry_points={
-        "console_scripts": ["constructor = constructor.main:main"],
+        "console_scripts": ["%s = %s.main:main" % (NAME, PACKAGE_NAME)],
     },
     install_requires=[
         "libconda",

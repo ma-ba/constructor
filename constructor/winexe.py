@@ -13,11 +13,11 @@ import tempfile
 from os.path import abspath, dirname, isfile, join
 from subprocess import check_call, check_output
 
-from constructor.construct import ns_platform
-from constructor.install import name_dist
-from constructor.utils import make_VIProductVersion, preprocess, fill_template
-from constructor.imaging import write_images
-import constructor.preconda as preconda
+from .construct import ns_platform
+from .install import name_dist
+from .utils import make_VIProductVersion, preprocess, fill_template
+from .imaging import write_images
+from . import preconda
 
 
 THIS_DIR = dirname(__file__)
@@ -193,13 +193,3 @@ def create(info):
     print('Calling: %s' % args)
     check_call(args)
     shutil.rmtree(tmp_dir)
-
-
-if __name__ == '__main__':
-    make_nsi({'name': 'Maxi', 'version': '1.2',
-              '_platform': 'win-64',
-              '_outpath': 'dummy.exe',
-              '_download_dir': 'dummy',
-              '_dists': ['python-2.7.9-0.tar.bz2',
-                         'vs2008_runtime-1.0-1.tar.bz2']},
-             '.')

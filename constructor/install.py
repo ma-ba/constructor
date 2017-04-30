@@ -30,6 +30,8 @@ import stat
 from os.path import abspath, dirname, exists, isdir, isfile, islink, join
 from optparse import OptionParser
 
+# file may be run as script; do not use relative imports from constructor!
+
 
 on_win = bool(sys.platform == 'win32')
 try:

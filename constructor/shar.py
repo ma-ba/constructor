@@ -12,11 +12,10 @@ import tarfile
 import tempfile
 from os.path import dirname, getsize, join
 
-from constructor.install import name_dist
-from constructor.construct import ns_platform
-from constructor.utils import (preprocess, read_ascii_only, fill_template,
-                               md5_file)
-import constructor.preconda as preconda
+from .install import name_dist
+from .construct import ns_platform
+from .utils import preprocess, read_ascii_only, fill_template, md5_file
+from . import preconda
 
 
 THIS_DIR = dirname(__file__)

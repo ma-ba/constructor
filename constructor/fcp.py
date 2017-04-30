@@ -17,8 +17,8 @@ from os.path import isdir, isfile, join
 from libconda.fetch import fetch_index, fetch_pkg
 from libconda.resolve import Resolve, NoPackagesFound
 
-from constructor.utils import md5_file
-from constructor.install import name_dist
+from .utils import md5_file
+from .install import name_dist
 
 
 dists = []

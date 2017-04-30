@@ -12,9 +12,9 @@ from os.path import abspath, basename, expanduser, isdir, join
 
 from libconda.config import subdir as cc_platform
 
-from constructor.install import yield_lines
-import constructor.fcp as fcp
-import constructor.construct as construct
+from .install import yield_lines
+from . import fcp
+from . import construct
 
 
 DEFAULT_CACHE_DIR = os.getenv('CONSTRUCTOR_CACHE', '~/.conda/constructor')
@@ -48,12 +48,12 @@ def main_build(dir_path, output_dir='.', platform=cc_platform,
     if osname in ('linux', 'osx'):
         if sys.platform == 'win32':
             sys.exit("Error: Cannot create .sh installer on Windows platform.")
-        from constructor.shar import create
+        from .shar import create
     elif osname == 'win':
         if sys.platform != 'win32':
             sys.exit("Error: Cannot create Windows .exe installer on "
                      "non-Windows platform.")
-        from constructor.winexe import create
+        from .winexe import create
     else:
         sys.exit("Error: invalid OS name '%s'" % osname)
 
@@ -150,7 +150,7 @@ def main():
     opts, args = p.parse_args()
 
     if opts.version:
-        from constructor import __version__
+        from . import __version__
         print('constructor version:', __version__)
         return
 
@@ -163,8 +163,8 @@ def main():
         return
 
     if opts.test:
-        import constructor.tests
-        constructor.tests.main()
+        from . import tests
+        tests.main()
         return
 
     if opts.debug:
@@ -180,7 +180,3 @@ def main():
 
     main_build(dir_path, output_dir=opts.output_dir, platform=opts.platform,
                verbose=opts.verbose, cache_dir=opts.cache_dir)
-
-
-if __name__ == '__main__':
-    main()

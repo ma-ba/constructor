@@ -10,7 +10,7 @@ from os.path import abspath
 
 import yaml
 
-from constructor import exceptions
+from . import exceptions
 
 
 PREABLE = '''\n
@@ -292,7 +292,3 @@ def generate_doc():
 """ % (key,
        ' required' if required else '',
        descr))
-
-
-if __name__ == '__main__':
-    generate_doc()

@@ -23,7 +23,7 @@ def main():
 
     if sys.platform == 'win32':
         import PIL
-        import constructor.winexe as winexe
+        from constructor import winexe
         from constructor.tests.test_imaging import test_write_images
 
         print('pillow version: %s' % PIL.PILLOW_VERSION)
@@ -31,7 +31,7 @@ def main():
         winexe.read_nsi_tmpl()
         test_write_images()
     else:
-        import constructor.shar as shar
+        from constructor import shar
         shar.read_header_template()
 
     test_parser.test_1()

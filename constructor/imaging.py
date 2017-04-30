@@ -96,10 +96,3 @@ def write_images(info, dir_path):
             im = f(info)
         assert im.size == size
         im.save(join(dir_path, tp + ext))
-
-
-if __name__ == '__main__':
-    info = {'name': 'test', 'version': '0.3.1',
-            'default_image_color': 'yellow',
-            'welcome_image': '../examples/maxiconda/bird.png'}
-    write_images(info, '.')

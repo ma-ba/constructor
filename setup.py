@@ -90,7 +90,7 @@ setup(
     version=version,
     author="Marcel Bargull",
     author_email="marcel.bargull@udo.edu",
-    url="https://github.com/ma-ba/constructor",
+    url="https://github.com/mbargull/constructor",
     # author="Ilan Schnell",
     # author_email="ilan@continuum.io",
     # url="https://github.com/conda/constructor",
@@ -105,6 +105,8 @@ setup(
     install_requires=[
         "libconda",
         "pyyaml",
+        "pillow >=3.1 ; platform_system=='Windows'",
+        # non-python dependency: "nsis >=3.01 ; platform_system=='Windows'",
     ],
     package_data=get_package_data(None),
     cmdclass=cmdclass,
